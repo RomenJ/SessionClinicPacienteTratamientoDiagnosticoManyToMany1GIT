@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paciente index{% endblock %}
+
+{% block body %}
+    <h1>Panel de control de pacientes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Telephone</th>
+                <th>Diagnósticos realizados</th>
+                <th>Tratamientos aplicados</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for paciente in pacientes %}
+            <tr>
+                <td>{{ paciente.id }}</td>
+                <td>{{ paciente.name }}</td>
+                <td>{{ paciente.telephone }}</td>
+            <td>
+            {% for tratamiento in paciente.tratamientos %}
+              {{ tratamiento.name }}
+              {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for diagnostico in paciente.diagnosticos %}
+              {{ diagnostico.name }}
+              {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </td>
+
+
+
+                <td>
+                    <a href="{{ path('app_paciente_show', {'id': paciente.id}) }}">show</a>
+                    <a href="{{ path('app_paciente_edit', {'id': paciente.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_paciente_new') }}">Create new</a>
+{% endblock %}
