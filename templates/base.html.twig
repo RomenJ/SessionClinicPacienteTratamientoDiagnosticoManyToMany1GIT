@@ -12,11 +12,11 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
 
         <style>
 
-    .Cabecera_Header{
+        .Cabecera_Header{
                 
             
                 background: linear-gradient(90deg, rgba(51,60,135,1) 0%, rgba(18,37,98,1) 52%, rgba(51,60,135,1) 96%);              
@@ -32,7 +32,6 @@
 
             }
 
-
             .Cabecera_Header > a > h1{
                       color:white;
             }
@@ -42,14 +41,12 @@
                 padding-right: 30px;
                 margin-right: 30px;
                 margin-left: 30px;
-
             }
-
 
         </style>
     </head>
     <body>
-<div class="Cabecera_Header"> <a href="{{ path('app_home') }}"> 
+    <div class="Cabecera_Header"> <a href="{{ path('app_home') }}"> 
      <h1> App de Tratamientos, Pacientes, Diagnósticos y tratamientos aplicados a pacientes 
        </h1>
        </a>

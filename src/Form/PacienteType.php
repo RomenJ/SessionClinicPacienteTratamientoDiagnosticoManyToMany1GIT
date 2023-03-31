@@ -19,10 +19,6 @@ class PacienteType extends AbstractType
             ->add('telephone')
          //   ->add('tratamientos')
        //     ->add('diagnosticos')
-
-
-
-
             ->add('tratamientos',EntityType::class, [
                 // looks for choices from this entity
                 'class' => Tratamiento::class,
